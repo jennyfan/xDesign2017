@@ -73,9 +73,9 @@ section {
   z-index: 0;
 }
 #circle circle {
+  transition: all .5s ease-in-out;
 }
 #circle circle:hover {
-  transition: all 2s ease-out;
   transform: scale(1.05);
   transform-origin: 50% 50%;
 }
@@ -334,11 +334,13 @@ hr {
   border-radius: 50%;
   cursor: pointer;
   box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
-  -webkit-backface-visibility: hidden; /* VERY IMPORTANT - PREVENTS FLICKER */
+  -webkit-backface-visibility: hidden;
   -webkit-animation: none;
 }
 .logo:hover {
   animation: pulse 1.5s infinite;
+  -moz-animation: pulse 1.5s infinite;
+  -ms-animation: pulse 1.5s infinite;
   -webkit-animation: pulse 1.5s infinite;
 }
 
@@ -374,8 +376,10 @@ hr {
 #inner {
   stroke-dasharray: 985; /* 984.4284057617188 */
   stroke-dashoffset: 985;
-  animation: dash-inner 5s both alternate infinite;
-  -webkit-animation: dash-inner 5s both alternate infinite;
+  animation: dash-inner 2s both alternate;
+  -moz-transform: dash-inner 2s both alternate;
+  -ms-transform: dash-inner 2s both alternate;
+  -webkit-animation: dash-inner 2s both alternate;
 }
 @keyframes dash-inner {
   from { stroke-dashoffset: 985; }
@@ -384,8 +388,10 @@ hr {
 #middle {
   stroke-dasharray: 666; /* 665.1653442382812 */
   stroke-dashoffset: 666;
-  animation: dash-inner 5s both alternate infinite;
-  -webkit-animation: dash-inner 5s both alternate infinite;
+  animation: dash-middle 2s both alternate;
+  -moz-animation: dash-middle 2s both alternate;
+  -ms-animation: dash-middle 2s both alternate;
+  -webkit-animation: dash-middle 2s both alternate;
 }
 @keyframes dash-middle {
   from { stroke-dashoffset: 666; }
@@ -394,21 +400,25 @@ hr {
 #outer {
   stroke-dasharray: 278; /* 277.32061767578125 */
   stroke-dashoffset: 278;
-  animation: dash-inner 5s both alternate infinite;
-  -webkit-animation: dash-inner 5s both alternate infinite;
+  animation: dash-outer 2s both alternate;
+  -moz-animation: dash-outer 2s both alternate;
+  -ms-animation: dash-outer 2s both alternate;
+  -webkit-animation: dash-outer 2s both alternate;
 }
 @keyframes dash-outer {
   from { stroke-dashoffset: 278; }
   to { stroke-dashoffset: 0; }
 }
 #rect {
-  stroke-dasharray: 941; /* 940.4400634765625 */
-  stroke-dashoffset: 941;
-  animation: dash-inner 5s linear alternate infinite;
-  -webkit-animation: dash-inner 5s linear alternate infinite;
+  stroke-dasharray: 940; /* 940.4400634765625 */
+  stroke-dashoffset: 940;
+  animation: dash-rect 2s both alternate;
+  -moz-animation: dash-rect 2s both alternate;
+  -ms-animation: dash-rect 2s both alternate;
+  -webkit-animation: dash-rect 2s both alternate;
 }
 @keyframes dash-rect {
-  from { stroke-dashoffset: 941; }
+  from { stroke-dashoffset: 940; }
   to { stroke-dashoffset: 0; }
 }
 
