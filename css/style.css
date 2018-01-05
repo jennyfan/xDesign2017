@@ -56,7 +56,8 @@ section {
     background-size: cover;
     background-position: center;
     position: relative;
-    /* white-space: nowrap; */
+    background-color: #2D318F;
+    white-space: nowrap;
     text-align: center;
 }
 .center-area {  
@@ -64,7 +65,36 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
+
+#circle {
+  position: absolute;
+  z-index: 0;
+}
+#circle circle {
+}
+#circle circle:hover {
+  transition: all 2s ease-out;
+  transform: scale(1.05);
+  transform-origin: 50% 50%;
+}
+#circle1 {
+  fill: #2E57FF;
+}
+#circle2 {
+  fill: #21A3FF;
+}
+#circle3 {
+  fill: #FFB813;
+}
+#circle4 {
+  fill: #2E57FF;
+}
+#circle5 {
+  fill: #2D318F;
+}
+
 #conference {
   background-color: #2D318F;
   color: #fff;
@@ -90,6 +120,7 @@ body {
   font-family: 'Calibre', Tahoma, Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #242424;
+  background-color: #2D318D;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -206,7 +237,7 @@ input {
 
 /* Navbar */
 .navbar {
-  padding: 8px;
+  padding: 16px 16px 8px 16px;
 }
 .navbar-bg {
   background-color: #2D318F;
@@ -254,7 +285,7 @@ input {
     text-decoration: none;
     background-color: #FF9811;
     color: #fff !important;
-    padding: 8px 24px 8px;
+    padding: 12px 24px;
     border-radius: 24px;
     border: 0;
     float: left;
@@ -291,12 +322,99 @@ hr {
   color: #242424;
   opacity: 0.1;
 }
+
+/*** PULSING BUTTON: https://codepen.io/seansean11/pen/dhwzj ***/
 .logo {
-  margin-top: 48px;
+  display: inline-block;
+  text-align: center;
+  z-index: 999;
+  width: 150px;
+  height: 150px;
+  margin: 120px auto 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
+  -webkit-backface-visibility: hidden; /* VERY IMPORTANT - PREVENTS FLICKER */
+  -webkit-animation: none;
 }
+.logo:hover {
+  animation: pulse 1.5s infinite;
+  -webkit-animation: pulse 1.5s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  70% {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
+  }
+  100% {
+    -moz-transform: scale(0.9);
+    -ms-transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
+  }
+}
+
+.logo svg {
+  fill:none;
+  stroke:#fff;
+  stroke-miterlimit:10;
+  stroke-width:12px;
+}
+#inner {
+  stroke-dasharray: 985; /* 984.4284057617188 */
+  stroke-dashoffset: 985;
+  animation: dash-inner 5s both alternate infinite;
+  -webkit-animation: dash-inner 5s both alternate infinite;
+}
+@keyframes dash-inner {
+  from { stroke-dashoffset: 985; }
+  to { stroke-dashoffset: 0; }
+}
+#middle {
+  stroke-dasharray: 666; /* 665.1653442382812 */
+  stroke-dashoffset: 666;
+  animation: dash-inner 5s both alternate infinite;
+  -webkit-animation: dash-inner 5s both alternate infinite;
+}
+@keyframes dash-middle {
+  from { stroke-dashoffset: 666; }
+  to { stroke-dashoffset: 0; }
+}
+#outer {
+  stroke-dasharray: 278; /* 277.32061767578125 */
+  stroke-dashoffset: 278;
+  animation: dash-inner 5s both alternate infinite;
+  -webkit-animation: dash-inner 5s both alternate infinite;
+}
+@keyframes dash-outer {
+  from { stroke-dashoffset: 278; }
+  to { stroke-dashoffset: 0; }
+}
+#rect {
+  stroke-dasharray: 941; /* 940.4400634765625 */
+  stroke-dashoffset: 941;
+  animation: dash-inner 5s linear alternate infinite;
+  -webkit-animation: dash-inner 5s linear alternate infinite;
+}
+@keyframes dash-rect {
+  from { stroke-dashoffset: 941; }
+  to { stroke-dashoffset: 0; }
+}
+
 .social {
-  margin: 8px 4px;
-  height: 32px;
+  margin: 16px 8px;
+  height: 24px;
 }
 .footerright, .footerright h3 {
   text-align: right;
@@ -324,43 +442,9 @@ hr {
     margin: 0;
 }
 
-
-/*** PULSING BUTTON: https://codepen.io/seansean11/pen/dhwzj ***/
-.pulse-button {
-  margin: 86px auto 16px;
-  display: inline-block;
+.subtitle {
+  width: 100%;
+  align-self: flex-end;
   text-align: center;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 0 0 0 rgba(90, 153, 212, 0.5);
-  -webkit-animation: pulse 1.5s infinite;
-}
-
-.pulse-button:hover {
-  -webkit-animation: none;
-}
-
-@-webkit-keyframes pulse {
-  0% {
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-  }
-  70% {
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    box-shadow: 0 0 0 50px rgba(90, 153, 212, 0);
-  }
-  100% {
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -webkit-transform: scale(0.9);
-    transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(90, 153, 212, 0);
-  }
+  z-index: 999;
 }
