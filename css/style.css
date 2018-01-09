@@ -52,7 +52,6 @@ section {
 }
 #cover {
     min-height: 100vh;
-    background-image: url('../img/header.png');
     background-size: cover;
     background-position: center;
     position: relative;
@@ -60,8 +59,12 @@ section {
     white-space: nowrap;
     text-align: center;
 }
+.bgimg {
+    background-image: url('../img/header.png');
+}
 .center-area {  
   min-height: 100vh;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
