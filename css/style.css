@@ -314,7 +314,8 @@ input {
   color: #1aabac !important;
 }
 .bold {
-  font-weight: 400 !important;
+  font-weight: 700 !important;
+  font-style: italic;
 }
 .highlight {
   background-color: #FFFBDA !important;
