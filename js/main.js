@@ -14,7 +14,6 @@ $(window).on("load",function() {
     });
 
 
-
     // Add Nav BG color on scroll
     var coverHeight = $("#cover").innerHeight();
     var navHeight = $("#navbar").innerHeight();
@@ -23,6 +22,14 @@ $(window).on("load",function() {
     	$("#navbar").addClass("navbar-bg");
     } else {
     	$("#navbar").removeClass("navbar-bg");
+    }
+
+    var scrollPos = $(this).scrollTop();
+
+    // swap logos
+    if (scrollPos < coverHeight) {
+      $(".logo_first").delay(800).fadeOut(500);
+      $(".logo_second").delay(1000).fadeIn(500);
     }
 
   }).scroll(); //invoke scroll-handler on page-load
