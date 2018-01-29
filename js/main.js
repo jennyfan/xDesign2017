@@ -1,4 +1,18 @@
 $(window).on("load",function() {
+
+    // swap logos
+    $(".logo_first").on("mouseenter", function() {
+        $(this).fadeToggle(300);
+        $(".logo_second").delay(300).fadeToggle(300);
+    });
+
+    $(".logo_second").on("mouseleave", function() {
+        $(this).fadeToggle(300);
+        $(".logo_first").delay(300).fadeToggle(300);
+    });
+      
+
+
   $(window).scroll(function() {
     var windowBottom = $(this).scrollTop() + $(this).innerHeight();
 
@@ -22,14 +36,6 @@ $(window).on("load",function() {
     	$("#navbar").addClass("navbar-bg");
     } else {
     	$("#navbar").removeClass("navbar-bg");
-    }
-
-    var scrollPos = $(this).scrollTop();
-
-    // swap logos
-    if (scrollPos < coverHeight) {
-      $(".logo_first").delay(2000).fadeOut(1000);
-      $(".logo_second").delay(2200).fadeIn(1000);
     }
 
   }).scroll(); //invoke scroll-handler on page-load
