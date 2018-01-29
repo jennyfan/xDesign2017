@@ -28,8 +28,8 @@ $(window).on("load",function() {
 
     // swap logos
     if (scrollPos < coverHeight) {
-      $(".logo_first").delay(800).fadeOut(500);
-      $(".logo_second").delay(1000).fadeIn(500);
+      $(".logo_first").delay(2000).fadeOut(1000);
+      $(".logo_second").delay(2200).fadeIn(1000);
     }
 
   }).scroll(); //invoke scroll-handler on page-load
