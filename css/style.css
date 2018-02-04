@@ -105,7 +105,6 @@ section {
   color: #242230;
   padding: 0;
   background-color: #eaeaea;
-  height: 240px;
 }
 #team {
   background-color: #FFB813;
@@ -185,6 +184,9 @@ small, .small, .small li {
 }
 
 @media screen and (min-width: 1024px) {
+  #sponsors {   
+    height: 240px;
+  }
   h2 {
     font-size: 32px;
     line-height: 40px;
@@ -273,6 +275,9 @@ input {
 
 
 @media screen and (max-width: 575px) {
+  #sponsors {
+    height: 400px;
+  }
   .navbar-brand {
     top: 8px;
   }
