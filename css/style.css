@@ -189,7 +189,7 @@ small, .small, .small li {
 
 @media screen and (min-width: 1024px) {
   #sponsors {   
-    height: 240px;
+    height: 320px;
   }
   h2 {
     font-size: 32px;
@@ -280,7 +280,7 @@ input {
 
 @media screen and (max-width: 575px) {
   #sponsors {
-    height: 400px;
+    height: 450px;
   }
   .navbar-brand {
     top: 8px;
